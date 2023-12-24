@@ -689,3 +689,7 @@ vim.api.nvim_set_keymap('n', '<leader>h6', ':lua require("harpoon.ui").nav_file(
 vim.api.nvim_set_keymap('n', '<leader>h7', ':lua require("harpoon.ui").nav_file(7)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h8', ':lua require("harpoon.ui").nav_file(8)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h9', ':lua require("harpoon.ui").nav_file(9)<CR>', { noremap = true, silent = true })
+
+
+-- Github Copilot Binding 
+
