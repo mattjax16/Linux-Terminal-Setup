@@ -667,7 +667,9 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 --
 -- MY TWEAKS
+-- Color Column 
 vim.opt.colorcolumn = "80"
+vim.api.nvim_set_hl(0, 'ColorColumn', {bg = '#545454'})
 
 -- set up clipboard
 vim.opt.clipboard = "unnamedplus"
