@@ -667,9 +667,20 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 --
 -- MY TWEAKS
--- Color Column 
-vim.opt.colorcolumn = "80"
+-- Color Column (making so only appears in file)
 vim.api.nvim_set_hl(0, 'ColorColumn', {bg = '#545454'})
+vim.api.nvim_create_augroup('ColorColumn', { clear = true })
+vim.api.nvim_create_autocmd({'BufEnter', 'WinEnter', 'FileType'}, {
+    pattern = '*',
+    callback = function()
+        if vim.fn.bufname('%') ~= '' then
+            vim.wo.colorcolumn = '80'  -- Set to your preferred column
+        else
+            vim.wo.colorcolumn = ''
+        end
+    end,
+    group = 'ColorColumn',
+})
 
 -- set up clipboard
 vim.opt.clipboard = "unnamedplus"
